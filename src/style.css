@@ -6,21 +6,32 @@
     font-weight: 700;
     font-size: medium;
 }
-/* .flex{ */
-    /* display: flex;
+.flex{ 
+     display: flex;
     justify-content: space-between;
     
 }
 .gap{
     display: flex;
-    gap: 10px;
+    gap: 6px;
 
 }
 .edit{
     color: black;
-    background-color: rgb(197, 161, 17);
+    background-color: #ffd04c;
     padding: 10px;
-} */
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+} 
+.edit1{
+    color: white;
+    background-color: red;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+} 
 
 .list{
     list-style: decimal;

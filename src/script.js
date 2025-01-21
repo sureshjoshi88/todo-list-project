@@ -38,6 +38,7 @@
 function getvalue(){
     let input = document.getElementById("input-value")
     let value = input.value
+    input.value = ""
     let maindiv1 = document.getElementById("s-number")
     let elements1 = document.createElement("li");
     maindiv1.appendChild(elements1)
@@ -46,8 +47,24 @@ function getvalue(){
     let elements2 = document.createElement("h5")
     elements2.innerText = value
     maindiv2.appendChild(elements2)
-
-
+    let mainFordiv3 = document.createElement("div")
+    mainFordiv3.style.padding = "8px"
+    mainFordiv3.classList.add("gap")
+    let maindiv3 = document.getElementById("action")
+    let elements3 = document.createElement("button")
+    elements3.innerText = "Edit"
+    elements3.classList.add("edit")
+    mainFordiv3.appendChild(elements3)
+    let elements4 = document.createElement("button")
+    elements4.innerText = "Delete"
+    elements4.classList.add("edit1")
+    mainFordiv3.appendChild(elements4)
+    maindiv3.appendChild(mainFordiv3)
+    elements4.addEventListener("click",()=>{
+        maindiv1.removeChild(elements1)
+        maindiv2.removeChild(elements2)
+        maindiv3.removeChild(mainFordiv3)
+    })
 }
 let butons = document.getElementById("buton-task")
 butons.addEventListener("click",()=>{
