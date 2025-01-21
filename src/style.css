@@ -6,13 +6,22 @@
     font-weight: 700;
     font-size: medium;
 }
-.flex{
-    display: flex;
+/* .flex{ */
+    /* display: flex;
     justify-content: space-between;
     
 }
 .gap{
     display: flex;
     gap: 10px;
-    
+
+}
+.edit{
+    color: black;
+    background-color: rgb(197, 161, 17);
+    padding: 10px;
+} */
+
+.list{
+    list-style: decimal;
 }
