@@ -57,7 +57,6 @@ function getvalue(){
         elements2.innerText = value
         maindiv2.appendChild(elements2)
         let mainFordiv3 = document.createElement("div")
-        // mainFordiv3.style.padding = "8px"
         mainFordiv3.classList.add("gap")
         let maindiv3 = document.getElementById("action")
         let elements3 = document.createElement("button")
@@ -74,6 +73,8 @@ function getvalue(){
             maindiv2.removeChild(elements2)
             maindiv3.removeChild(mainFordiv3)
         })
+        // let line = document.createElement("hr")
+        // let mainRow = document.getElementById("main-row")
     }
     }
 let butons = document.getElementById("buton-task")
