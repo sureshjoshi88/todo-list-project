@@ -53,11 +53,11 @@ function getvalue(){
         maindiv1.appendChild(elements1)
         elements1.classList.add("list")
         let maindiv2 = document.getElementById("todo")
-        let elements2 = document.createElement("h5")
+        let elements2 = document.createElement("h4")
         elements2.innerText = value
         maindiv2.appendChild(elements2)
         let mainFordiv3 = document.createElement("div")
-        mainFordiv3.style.padding = "8px"
+        // mainFordiv3.style.padding = "8px"
         mainFordiv3.classList.add("gap")
         let maindiv3 = document.getElementById("action")
         let elements3 = document.createElement("button")
