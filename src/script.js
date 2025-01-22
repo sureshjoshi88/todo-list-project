@@ -6,8 +6,9 @@ input.addEventListener("keypress",(e)=>{
     }
 })
 function getvalue(){
-    if(input.value==""){
+    if(input.value.trim()==""){
         alert("please enter a value")
+        return;
     }else{
 
         let value = input.value
@@ -37,6 +38,7 @@ function getvalue(){
             maindiv2.removeChild(elements2)
             maindiv3.removeChild(mainFordiv3)
         })
+
         elements3.addEventListener("click",()=>{
             let createInput = document.createElement("input")
             maindiv2.removeChild(elements2)
@@ -61,6 +63,7 @@ function getvalue(){
                 mainFordiv3.appendChild(elements3)
                 mainFordiv3.appendChild(elements4)                
             })
+
             cancalButon.addEventListener("click",()=>{
                 maindiv2.removeChild(createInput)
                 maindiv2.appendChild(elements2)
@@ -69,9 +72,12 @@ function getvalue(){
                 mainFordiv3.appendChild(elements3)
                 mainFordiv3.appendChild(elements4)
             })
+
         })
+
     }   
     }
+    
 let butons = document.getElementById("buton-task")
 butons.addEventListener("click",()=>{
     getvalue();
