@@ -79,6 +79,11 @@ function getvalue(){
             maindiv2.removeChild(elements2)
             maindiv2.appendChild(createInput)
             let savButton = document.createElement("button")
+            let cancalButon = document.createElement("button")
+            cancalButon.innerText = "Cancel"
+            cancalButon.classList.add("cancel")
+            mainFordiv3.removeChild(elements4)
+            mainFordiv3.appendChild(cancalButon)
             savButton.innerText = "Save"
             savButton.classList.add("savbut")
             mainFordiv3.removeChild(elements3)
@@ -88,8 +93,18 @@ function getvalue(){
                 let heading_5 = document.createElement("h5")
                 heading_5.innerText = createInput.value
                 maindiv2.appendChild(heading_5)
-                console.log(heading_5);
-                
+                mainFordiv3.removeChild(cancalButon)
+                mainFordiv3.removeChild(savButton)
+                mainFordiv3.appendChild(elements3)
+                mainFordiv3.appendChild(elements4)                
+            })
+            cancalButon.addEventListener("click",()=>{
+                maindiv2.removeChild(createInput)
+                maindiv2.appendChild(elements2)
+                mainFordiv3.removeChild(cancalButon)
+                mainFordiv3.removeChild(savButton)
+                mainFordiv3.appendChild(elements3)
+                mainFordiv3.appendChild(elements4)
             })
         })
     }   
