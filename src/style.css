@@ -45,3 +45,14 @@
     font-weight: 500;
     /* padding-top: 10px; */
 }
+.savbut{
+    color: white;
+    background-color: green;
+    padding: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    margin-top: 4px;
+}

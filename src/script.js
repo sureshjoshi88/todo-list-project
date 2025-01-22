@@ -73,8 +73,25 @@ function getvalue(){
             maindiv2.removeChild(elements2)
             maindiv3.removeChild(mainFordiv3)
         })
-        // let line = document.createElement("hr")
-        // let mainRow = document.getElementById("main-row")
+        elements3.addEventListener("click",()=>{
+            let createInput = document.createElement("input")
+            valueForinput = createInput.value
+            maindiv2.removeChild(elements2)
+            maindiv2.appendChild(createInput)
+            let savButton = document.createElement("button")
+            savButton.innerText = "Save"
+            savButton.classList.add("savbut")
+            mainFordiv3.removeChild(elements3)
+            mainFordiv3.appendChild(savButton)
+            savButton.addEventListener("click",()=>{
+                maindiv2.removeChild(createInput)
+                let heading_5 = document.createElement("h5")
+                heading_5.innerText = createInput.value
+                maindiv2.appendChild(heading_5)
+                console.log(heading_5);
+                
+            })
+        })
     }
     }
 let butons = document.getElementById("buton-task")
