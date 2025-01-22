@@ -39,7 +39,6 @@ function getvalue(){
         })
         elements3.addEventListener("click",()=>{
             let createInput = document.createElement("input")
-            valueForinput = createInput.value
             maindiv2.removeChild(elements2)
             maindiv2.appendChild(createInput)
             let savButton = document.createElement("button")
