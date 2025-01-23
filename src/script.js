@@ -211,8 +211,8 @@ function getinpvalue(){
     }
     tasks.push(task)
     localStorage.setItem("taska",JSON.stringify(tasks))
+    count++
     inputvlauses.value = ""
-    location.reload();
 }
 function privalues(){
     let data = localStorage.getItem("tasks")
@@ -225,6 +225,6 @@ function privalues(){
     let heads3 = document.createElement("h3")
     heads3.innerText = element.serialNo
     maincontent.appendChild(heads3)
-    })
+    });
 }
 privalues();
