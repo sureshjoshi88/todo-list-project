@@ -103,3 +103,91 @@ butons.addEventListener("click",()=>{
 // let jsobject = JSON.parse(jsonstring)
 // let abc = document.getElementById("bac")
 // abc.innerText = jsobject.name
+
+
+// localStorage.setItem("todo-items",JSON.stringify([
+//   {
+//     "serialNo":1,
+//     "task":"todo task 1"
+//   },
+//   {
+//     "serialNo":2,
+//     "task":"todo task 2"
+//   },
+//   {
+//     "serialNo":3,
+//     "task":"todo task 3"
+//   },
+// ]))
+
+// tasks = []
+// count = 1
+
+
+
+
+// let taskFromLocalStorage = JSON.parse(localStorage.getItem("tasks"))
+// let tasks = taskFromLocalStorage || [];
+// let count = tasks.length ? tasks[tasks.length-1].serialNo+1 : 1;
+
+// console.log(count)
+
+// function getTodoValue(){
+//   let todoInput = document.getElementById("todo-input")
+//   let task = {
+//     serialNo:count,
+//     taskValue: todoInput.value
+//   }
+//   tasks.push(task)
+//   localStorage.setItem("tasks",JSON.stringify(tasks))
+//   count++
+// }
+
+// function printValues(){
+//   let stringTask = localStorage.getItem("tasks")
+
+// let parsedTask = JSON.parse(stringTask)
+
+//  let main = document.getElementById("mainContent")
+
+ 
+//  parsedTask.forEach(element => {
+//    let h3 = document.createElement("h3")
+//   h3.innerText = element.taskValue
+//   main.appendChild(h3)
+//  });
+// }
+
+// printValues()
+
+
+
+
+let taskFromLocalStorage = JSON.parse(localStorage.getItem("tasks"))
+let tasks = taskFromLocalStorage || [];
+let count = tasks.length ? tasks[tasks.length-1].serialNo+1:1;
+
+
+function getvaluelocal(){
+    let input_todo = document.getElementById("input-vale")
+    let task = {
+        serialNo:count,
+        taskvalue:input_todo.value
+    }
+    tasks.push(task)
+    localStorage.setItem("tasks",JSON.stringify(tasks))
+    count++;
+    input_todo.value = ""
+}
+
+function printValues(){
+    let stringTask = localStorage.getItem("tasks")
+    let parsed = JSON.parse(stringTask)
+    let maincontent = document.getElementById("bac")
+    parsed.forEach(element => {
+        let h3 = document.createElement("h3")
+        h3.innerText = element.taskvalue
+        maincontent.appendChild(h3)
+    });
+}
+printValues();
