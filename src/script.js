@@ -163,35 +163,51 @@ butons.addEventListener("click",()=>{
 
 
 
-let taskFromLocalStorage = JSON.parse(localStorage.getItem("tasks"))
-let tasks = taskFromLocalStorage || [];
-let count = tasks.length ? tasks[tasks.length-1].serialNo+1:1;
+// let taskFromLocalStorage = JSON.parse(localStorage.getItem("tasks"))
+// let tasks = taskFromLocalStorage || [];
+// let count = tasks.length ? tasks[tasks.length-1].serialNo+1:1;
 
-function getvaluelocal(){
-    let input_todo = document.getElementById("input-vale")
-    let task = {
-        serialNo:count,
-        taskvalue:input_todo.value
-    }
-    tasks.push(task)
-    localStorage.setItem("tasks",JSON.stringify(tasks))
-    count++;
-    input_todo.value = ""
-    location.reload();
-}
+// function getvaluelocal(){
+//     let input_todo = document.getElementById("input-vale")
+//     let task = {
+//         serialNo:count,
+//         taskvalue:input_todo.value
+//     }
+//     tasks.push(task)
+//     localStorage.setItem("tasks",JSON.stringify(tasks))
+//     count++;
+//     input_todo.value = ""
+//     location.reload();
+// }
 
-function printValues(){
-    let stringTask = localStorage.getItem("tasks")
-    let parsed = JSON.parse(stringTask)
-    let maincontent = document.getElementById("bac")
-    parsed.forEach(element => {
-        let h3 = document.createElement("h3")
-        h3.innerText = element.taskvalue
-        maincontent.appendChild(h3)
-        let createlem = document.createElement("h3")
-        createlem.innerText = element.serialNo
-        maincontent.appendChild(createlem)
-    });
-}
-printValues();
+// function printValues(){
+//     let stringTask = localStorage.getItem("tasks")
+//     let parsed = JSON.parse(stringTask)
+//     let maincontent = document.getElementById("bac")
+//     parsed.forEach(element => {
+//         let h3 = document.createElement("h3")
+//         h3.innerText = element.taskvalue
+//         maincontent.appendChild(h3)
+//         let createlem = document.createElement("h3")
+//         createlem.innerText = element.serialNo
+//         maincontent.appendChild(createlem)
+//     });
+// }
+// printValues();
 
+
+// let tasklocal = JSON.parse(localStorage.getItem("todos"))
+// let todos = tasklocal || []
+// let conuter = todos.length ? todos[todos.length-1].srno+1:1;
+
+// function getvalue(){
+//     let input_todo = document.getElementById("input-vale")
+//     let todo ={
+//         srno:conuter,
+//         inputvalue:input_todo.value
+//     }
+//     todos.push(todo)
+//     localStorage.setItem("todos",JSON.stringify(todos))
+//     conuter++
+//     input_todo.value =""
+// }
