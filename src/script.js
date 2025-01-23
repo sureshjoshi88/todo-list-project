@@ -163,68 +163,35 @@ butons.addEventListener("click",()=>{
 
 
 
-// let taskFromLocalStorage = JSON.parse(localStorage.getItem("tasks"))
-// let tasks = taskFromLocalStorage || [];
-// let count = tasks.length ? tasks[tasks.length-1].serialNo+1:1;
-
-
-// function getvaluelocal(){
-//     let input_todo = document.getElementById("input-vale")
-//     let task = {
-//         serialNo:count,
-//         taskvalue:input_todo.value
-//     }
-//     tasks.push(task)
-//     localStorage.setItem("tasks",JSON.stringify(tasks))
-//     count++;
-//     input_todo.value = ""
-//     location.reload();
-
-// }
-
-// function printValues(){
-//     let stringTask = localStorage.getItem("tasks")
-//     let parsed = JSON.parse(stringTask)
-//     let maincontent = document.getElementById("bac")
-//     parsed.forEach(element => {
-//         let h3 = document.createElement("h3")
-//         h3.innerText = element.taskvalue
-//         maincontent.appendChild(h3)
-//         let createlem = document.createElement("h3")
-//         createlem.innerText = element.serialNo
-//         maincontent.appendChild(createlem)
-//     });
-// }
-// printValues();
-
-
-let datagetloca = JSON.parse(localStorage.getItem("tasks"))
-let tasks = datagetloca || [];
+let taskFromLocalStorage = JSON.parse(localStorage.getItem("tasks"))
+let tasks = taskFromLocalStorage || [];
 let count = tasks.length ? tasks[tasks.length-1].serialNo+1:1;
 
-
-function getinpvalue(){
-    let inputvlauses = document.getElementById("input-vale")
+function getvaluelocal(){
+    let input_todo = document.getElementById("input-vale")
     let task = {
         serialNo:count,
-        taskvalue:inputvlauses.value
+        taskvalue:input_todo.value
     }
     tasks.push(task)
-    localStorage.setItem("taska",JSON.stringify(tasks))
-    count++
-    inputvlauses.value = ""
+    localStorage.setItem("tasks",JSON.stringify(tasks))
+    count++;
+    input_todo.value = ""
+    location.reload();
 }
-function privalues(){
-    let data = localStorage.getItem("tasks")
-    let datapars = JSON.parse(data)
+
+function printValues(){
+    let stringTask = localStorage.getItem("tasks")
+    let parsed = JSON.parse(stringTask)
     let maincontent = document.getElementById("bac")
-    datapars.forEach(element =>{
-    let heading3 = document.createElement("h3")
-    heading3.innerText  =element.taskvalue
-    maincontent.appendChild(heading3)
-    let heads3 = document.createElement("h3")
-    heads3.innerText = element.serialNo
-    maincontent.appendChild(heads3)
+    parsed.forEach(element => {
+        let h3 = document.createElement("h3")
+        h3.innerText = element.taskvalue
+        maincontent.appendChild(h3)
+        let createlem = document.createElement("h3")
+        createlem.innerText = element.serialNo
+        maincontent.appendChild(createlem)
     });
 }
-privalues();
+printValues();
+
