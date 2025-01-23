@@ -227,4 +227,4 @@ function privalues(){
     maincontent.appendChild(heads3)
     })
 }
-printValues();
+privalues();
