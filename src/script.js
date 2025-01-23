@@ -178,6 +178,8 @@ function getvaluelocal(){
     localStorage.setItem("tasks",JSON.stringify(tasks))
     count++;
     input_todo.value = ""
+    location.reload();
+
 }
 
 function printValues(){
@@ -188,6 +190,9 @@ function printValues(){
         let h3 = document.createElement("h3")
         h3.innerText = element.taskvalue
         maincontent.appendChild(h3)
+        let createlem = document.createElement("h3")
+        createlem.innerText = element.serialNo
+        maincontent.appendChild(createlem)
     });
 }
 printValues();
