@@ -82,3 +82,24 @@ let butons = document.getElementById("buton-task")
 butons.addEventListener("click",()=>{
     getvalue();
 })
+
+
+
+
+// let obj ={name:"Deependra",age:20}
+// localStorage.setItem("obj",JSON.stringify(obj))
+// let jsonString = localStorage.getItem("obj")
+// let jsObject = JSON.parse(jsonString)
+// console.log(jsObject)
+
+
+// let obj = {
+//     name:"suresh joshi",
+//     age:20,
+//     city:"nagaur"
+// }
+// localStorage.setItem("obj",JSON.stringify(obj));
+// let jsonstring = localStorage.getItem("obj")
+// let jsobject = JSON.parse(jsonstring)
+// let abc = document.getElementById("bac")
+// abc.innerText = jsobject.name
