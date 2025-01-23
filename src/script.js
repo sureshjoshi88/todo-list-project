@@ -85,7 +85,6 @@ butons.addEventListener("click",()=>{
 
 
 
-
 // let obj ={name:"Deependra",age:20}
 // localStorage.setItem("obj",JSON.stringify(obj))
 // let jsonString = localStorage.getItem("obj")
