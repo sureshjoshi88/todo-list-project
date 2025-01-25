@@ -53,6 +53,7 @@ function getvalue(){
             savButton.classList.add("savbut")
             mainFordiv3.removeChild(elements3)
             mainFordiv3.appendChild(savButton)
+        })
             savButton.addEventListener("click",()=>{
                 maindiv2.removeChild(createInput)
                 let heading_5 = document.createElement("h5")
@@ -73,7 +74,7 @@ function getvalue(){
                 mainFordiv3.appendChild(elements4)
             })
 
-        })
+       
 
     }   
     }
