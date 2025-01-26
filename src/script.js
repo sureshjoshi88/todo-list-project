@@ -201,13 +201,46 @@ let input = document.getElementById("input-value").addEventListener("input",(e)=
         getvalue();
     }
 })
-let buton  = document.getElementById("buton-task")
+let buton  = document.getElementById("buton-task").addEventListener("click",getvalue())
+
+function getvalue(){
+    let input = document.getElementById("input-value")
+    let value = input.value.trim();
+    if(!value){
+        alert("please Enter a value")
+        return;
+    }
+    input.value =""
+
+
+}
 
 
 
 
 
 
+let createelement = document.createElement("li")
+createelement.classList.add("list")
+
+let createheading = document.createElement("h4")
+createheading.innerText = value
+
+
+let main1 = document.getElementById("s-number").appendChild(createelement)
+let main2 = document.getElementById("todo").appendChild(createheading)
+let main3 = document.getElementById("action").appendChild(actionContainer)
+
+
+let actionContainer = 
+
+
+
+
+function createActionButton (createelement,createheading){
+let maindiv = document.createElement("div")
+maindiv.classList.add("gap")
+}
 
 
 
