@@ -287,6 +287,152 @@ function restoebuton(container,editbuton,deletebutton,savbutton,cancelbutton){
 
 
 
+
+
+
+// document.addEventListener("DOMContentLoaded", loadTasks);
+
+// let input = document.getElementById("input-value").addEventListener("keypress", (e) => {
+//     if (e.key == "Enter") {
+//         getvalue();
+//     }
+// });
+
+// let button = document.getElementById("buton-task").addEventListener("click", getvalue);
+
+// function getvalue() {
+//     let input = document.getElementById("input-value");
+//     let value = input.value.trim();
+//     if (!value) {
+//         alert("Please enter a value");
+//         return;
+//     }
+//     input.value = "";
+
+//     let task = { id: Date.now(), text: value }; // Create a task object
+//     saveTaskToLocalStorage(task);
+//     renderTask(task);
+// }
+
+// function renderTask(task) {
+//     let createelement = document.createElement("li");
+//     createelement.classList.add("list");
+//     createelement.setAttribute("data-id", task.id); // Unique identifier for each task
+
+//     let createheading = document.createElement("h4");
+//     createheading.innerText = task.text;
+
+//     let actionContainer = createActionButton(createelement, createheading);
+
+//     document.getElementById("todo").appendChild(createelement);
+//     createelement.appendChild(createheading);
+//     createelement.appendChild(actionContainer);
+// }
+
+// function createActionButton(createelement, createheading) {
+//     let actionContainer = document.createElement("div");
+//     actionContainer.classList.add("gap");
+
+//     let editbutton = document.createElement("button");
+//     editbutton.innerText = "Edit";
+//     editbutton.classList.add("edit");
+
+//     let deletebutton = document.createElement("button");
+//     deletebutton.innerText = "Delete";
+//     deletebutton.classList.add("edit1");
+
+//     deletebutton.addEventListener("click", () => {
+//         let id = createelement.getAttribute("data-id");
+//         removeTaskFromLocalStorage(id);
+//         createelement.remove();
+//     });
+
+//     editbutton.addEventListener("click", () =>
+//         edittask(createheading, editbutton, deletebutton, actionContainer)
+//     );
+
+//     actionContainer.appendChild(editbutton);
+//     actionContainer.appendChild(deletebutton);
+//     return actionContainer;
+// }
+
+// function edittask(createheading, editbutton, deletebutton, actionContainer) {
+//     let createinput = document.createElement("input");
+//     createinput.value = createheading.innerText;
+//     createheading.replaceWith(createinput);
+//     createinput.focus();
+
+//     let savebutton = document.createElement("button");
+//     savebutton.innerText = "Save";
+//     savebutton.classList.add("savbut");
+
+//     let cancelbutton = document.createElement("button");
+//     cancelbutton.innerText = "Cancel";
+//     cancelbutton.classList.add("cancel");
+
+//     savebutton.addEventListener("click", () => {
+//         if (!createinput.value.trim()) {
+//             alert("Enter a task value");
+//             return;
+//         }
+//         let id = createinput.parentElement.getAttribute("data-id");
+//         updateTaskInLocalStorage(id, createinput.value.trim());
+//         createheading.innerText = createinput.value.trim();
+//         createinput.replaceWith(createheading);
+//         restoreButtons(actionContainer, editbutton, deletebutton, savebutton, cancelbutton);
+//     });
+
+//     cancelbutton.addEventListener("click", () => {
+//         createinput.replaceWith(createheading);
+//         restoreButtons(actionContainer, editbutton, deletebutton, savebutton, cancelbutton);
+//     });
+
+//     actionContainer.replaceChild(savebutton, editbutton);
+//     actionContainer.replaceChild(cancelbutton, deletebutton);
+// }
+
+// function restoreButtons(container, editbutton, deletebutton, savebutton, cancelbutton) {
+//     container.replaceChild(editbutton, savebutton);
+//     container.replaceChild(deletebutton, cancelbutton);
+// }
+
+// // Local Storage Functions
+
+// function saveTaskToLocalStorage(task) {
+//     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+//     tasks.push(task);
+//     localStorage.setItem("tasks", JSON.stringify(tasks));
+// }
+
+// function removeTaskFromLocalStorage(id) {
+//     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+//     tasks = tasks.filter(task => task.id !== parseInt(id));
+//     localStorage.setItem("tasks", JSON.stringify(tasks));
+// }
+
+// function updateTaskInLocalStorage(id, newText) {
+//     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+//     tasks = tasks.map(task => task.id === parseInt(id) ? { ...task, text: newText } : task);
+//     localStorage.setItem("tasks", JSON.stringify(tasks));
+// }
+
+// function loadTasks() {
+//     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+//     tasks.forEach(task => renderTask(task));
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
 // let obj ={name:"Deependra",age:20}
 // localStorage.setItem("obj",JSON.stringify(obj))
 // let jsonString = localStorage.getItem("obj")
