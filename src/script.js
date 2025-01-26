@@ -212,34 +212,36 @@ function getvalue(){
     }
     input.value =""
 
-
-}
-
-
-
-
-
-
 let createelement = document.createElement("li")
 createelement.classList.add("list")
 
 let createheading = document.createElement("h4")
 createheading.innerText = value
 
+let actionContainer = createActionButton(createelement,createheading)
 
 let main1 = document.getElementById("s-number").appendChild(createelement)
 let main2 = document.getElementById("todo").appendChild(createheading)
 let main3 = document.getElementById("action").appendChild(actionContainer)
 
 
-let actionContainer = 
 
 
+}
 
 
 function createActionButton (createelement,createheading){
 let maindiv = document.createElement("div")
 maindiv.classList.add("gap")
+
+let editbuton = document.createElement("button")
+editbuton.innerText = "Edit"
+maindiv.appendChild(editbuton)
+
+let deletebutton = document.createElement("button")
+deletebutton.innerText = "Delete"
+maindiv.appendChild(deletebutton)
+
 }
 
 
