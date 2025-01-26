@@ -10,6 +10,7 @@ function getvalue(){
         alert("please enter a value")
         return;
     }else{
+
         let value = input.value
         input.value = ""
         let maindiv1 = document.getElementById("s-number")
@@ -37,6 +38,7 @@ function getvalue(){
             maindiv2.removeChild(elements2)
             maindiv3.removeChild(mainFordiv3)
         })
+
         elements3.addEventListener("click",()=>{
             let createInput = document.createElement("input")
             maindiv2.removeChild(elements2)
@@ -72,12 +74,8 @@ function getvalue(){
                 mainFordiv3.appendChild(elements4)
             })
 
-            elements4.addEventListener("click",()=>{
-                maindiv1.removeChild(elements1)
-                maindiv2.remove()
-                maindiv3.removeChild(mainFordiv3)
-            })
         })
+
     }   
     }
     
