@@ -72,6 +72,11 @@ function getvalue(){
                 mainFordiv3.appendChild(elements4)
             })
 
+            elements4.addEventListener("click",()=>{
+                maindiv1.removeChild(elements1)
+                maindiv2.remove()
+                maindiv3.removeChild(mainFordiv3)
+            })
         })
     }   
     }
