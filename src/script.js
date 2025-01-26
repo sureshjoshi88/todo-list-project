@@ -196,12 +196,12 @@
 
 
 
-let input = document.getElementById("input-value").addEventListener("input",(e)=>{
+let input = document.getElementById("input-value").addEventListener("keypress",(e)=>{
     if(e.key =="Enter"){
         getvalue();
     }
 })
-let buton  = document.getElementById("buton-task").addEventListener("click",getvalue())
+let buton  = document.getElementById("buton-task").addEventListener("click",getvalue)
 
 function getvalue(){
     let input = document.getElementById("input-value")
@@ -220,16 +220,10 @@ createheading.innerText = value
 
 let actionContainer = createActionButton(createelement,createheading)
 
-let main1 = document.getElementById("s-number").appendChild(createelement)
-let main2 = document.getElementById("todo").appendChild(createheading)
-let main3 = document.getElementById("action").appendChild(actionContainer)
-
-
-
-
+document.getElementById("s-number").appendChild(createelement)
+document.getElementById("todo").appendChild(createheading)
+document.getElementById("action").appendChild(actionContainer)
 }
-
-
 function createActionButton (createelement,createheading){
 let actionContainer = document.createElement("div")
 actionContainer.classList.add("gap")
@@ -241,32 +235,26 @@ let deletebutton = document.createElement("button")
 deletebutton.innerText = "Delete"
 deletebutton.classList.add("edit1")
 
-
 deletebutton.addEventListener("click",()=>{
-    main1.remove();
-    main2.remove();
-    main3.remove();
+    createelement.remove();
+    createheading.remove();
+    actionContainer.remove();
 });
-
 editbuton.addEventListener("click",()=>edittask(createheading,editbuton,deletebutton,actionContainer))
 
 actionContainer.appendChild(editbuton)
 actionContainer.appendChild(deletebutton)
 return actionContainer
 }
-
-
 function edittask(createheading,editbuton,deletebutton,actionContainer){
     let createinput = document.createElement("input")
     createinput.value = createheading.innerText
     createheading.replaceWith(createinput)
     createinput.focus()
 
-
     let savbutton = document.createElement("button")
     savbutton.innerText = "Save"
     savbutton.classList.add("savbut")
-
 
     let cancelbutton = document.createElement("button")
     cancelbutton.innerText = "Cancel"
@@ -277,25 +265,17 @@ function edittask(createheading,editbuton,deletebutton,actionContainer){
             alert("enter a task value")
             return
         }
-
         createheading.innerText = createinput.value.trim()
         createinput.replaceWith(createheading)
         restoebuton(actionContainer,editbuton,deletebutton,savbutton,cancelbutton)
-
     })
-
     cancelbutton.addEventListener("click",()=>{
         createinput.replaceWith(createheading)
         restoebuton(actionContainer,editbuton,deletebutton,savbutton,cancelbutton)
     })
-
     actionContainer.replaceChild(savbutton,editbuton)
     actionContainer.replaceChild(cancelbutton,deletebutton)
-
-
-
 }
-
 function restoebuton(container,editbuton,deletebutton,savbutton,cancelbutton){
     container.replaceChild(editbuton,savbutton)
     container.replaceChild(deletebutton,cancelbutton)
