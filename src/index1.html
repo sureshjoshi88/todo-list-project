@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body>
+
+    <section id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 py-5">
+                   <div class="d-flex align-items-center justify-content-between" >
+                        <h3>Todos</h3>
+                        <div class="d-flex  align-items-center gap-3" >
+                                <input type="text" id="input-value" class="form-control" placeholder="Enter Task" aria-label="Username" aria-describedby="basic-addon1">
+                            <button type="button" id="buton-task" class="btn btn-primary">Add</button>
+                        </div>
+                   </div>
+                </div>
+                <div class="col">
+                    <div >
+                        <h6 class="text-secondary" >S.No</h4>
+
+                    </div>
+                </div>
+                <div class="col-7" >
+                    <div >
+                        <h6 class="text-secondary" >Todo</h4>
+
+                    </div>
+                </div>
+                <div class="col" >
+                    <div >
+                        <h6 class="text-secondary" >Action</h4>
+
+                    </div>
+                </div>
+                
+                <hr/>
+            </div>
+
+            <div class="row align-items-center" id="main-row">
+                <div class="col d-flex align-items-center mt-2" >
+                  
+                </div>
+                <div class="col-8 d-flex align-items-center mt-2" >
+                    
+                </div>
+                <div class="col d-flex align-items-center mt-2" >
+                    
+                </div>
+            </div> 
+        </div>
+
+    </section>
+    
+ 
+  
+   
+    <!-- <script src="./script.js"></script> -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script>
+    let paeseddata = JSON.parse(localStorage.getItem("todo"))
+    let todos = paeseddata || []
+    let count = todos.length ? todos[todos.length-1].srno+1 : 1
+
+
+    function getvalue(srno,value){
+        let input = document.getElementById("input-value")
+
+        let parentdiv = document.createElement("div")
+        parentdiv.classList.add("row")
+        parentdiv.classList.add("align-items-center")
+        
+    }
+
+
+    </script>
+</body>
+</html>
