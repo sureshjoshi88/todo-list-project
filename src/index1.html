@@ -10,7 +10,7 @@
 <body>
 
     <section id="main">
-        <div class="container">
+        <div class="container" id="main-container">
             <div class="row">
                 <div class="col-12 py-5">
                    <div class="d-flex align-items-center justify-content-between" >
@@ -44,13 +44,13 @@
             </div>
 
             <div class="row align-items-center" id="main-row">
-                <div class="col d-flex align-items-center mt-2" >
+                <div class="col " >
                   
                 </div>
-                <div class="col-8 d-flex align-items-center mt-2" >
+                <div class="col-8 " >
                     
                 </div>
-                <div class="col d-flex align-items-center mt-2" >
+                <div class="col " >
                     
                 </div>
             </div> 
@@ -70,13 +70,74 @@
 
 
     function getvalue(srno,value){
-        let input = document.getElementById("input-value")
+        let maincontainer = document.getElementById("main-container")
 
         let parentdiv = document.createElement("div")
         parentdiv.classList.add("row")
         parentdiv.classList.add("align-items-center")
+        parentdiv.classList.add("border-bottom")
+        parentdiv.classList.add("pt-3")
+        parentdiv.classList.add("pb-3")
+        maincontainer.appendChild(parentdiv)
+
+
+        let childdiv1 = document.createElement("div")
+        childdiv1.classList.add("col")
+        parentdiv.appendChild(childdiv1)
+
+        let childh6_1 = document.createElement("h6")
+        childh6_1.classList.add("mb-0")
+        childh6_1.innerText = srno
+        childdiv1.appendChild(childh6_1)
+
+
         
+        let childdiv2 = document.createElement("div")
+        childdiv2.classList.add("col-8")
+        parentdiv.appendChild(childdiv2)
+
+        let childh6_2 = document.createElement("h6")
+        childh6.classList.add("mb-0")
+        childh6.innerText = value
+        childdiv2.appendChild(childh6)
+
+
+        let childdiv3 = document.createElement("div")
+        childdiv3.classList.add("col")
+        childdiv3.classList.add("d-flex")
+        childdiv3.classList.add("align-items-center")
+        childdiv3.classList.add("gap-1")
+        parentdiv.appendChild(childdiv3)
+
+
+        deletebuton = document.createElement("button")
+        deletebuton.innerText = "Delete"
+        deletebuton.classList.add("btn")
+        deletebuton.classList.add("btn-danger")
+        childdiv3.appendChild(deletebuton)
+
+        editbuton = document.createElement("button")
+        editbuton.innerText = "Edit"
+        editbuton.classList.add("btn")
+        editbuton.classList.add("btn-warning")
+        childdiv3.appendChild(editbuton)
+
     }
+
+    function gettodo(){
+        let input = document.getElementById("input-value")
+
+        let task = {
+            srno:count,
+            inputvalue:input.value,
+        }
+        todos.push(task)
+        localStorage.setItem("todo",JSON.stringify(todos))
+        count++
+
+    }
+
+    function
 
 
     </script>
