@@ -17,7 +17,7 @@
                         <h3>Todos</h3>
                         <div class="d-flex  align-items-center gap-3" >
                                 <input type="text" id="input-value" class="form-control" placeholder="Enter Task" aria-label="Username" aria-describedby="basic-addon1">
-                            <button type="button" id="buton-task" class="btn btn-primary">Add</button>
+                            <button type="button" id="buton-task" onclick="addfunction()" class="btn btn-primary">Add</button>
                         </div>
                    </div>
                 </div>
@@ -122,7 +122,11 @@
         editbuton.classList.add("btn-warning")
         childdiv3.appendChild(editbuton)
 
+
+        deletebuton.onclick = deletetodo;
+
     }
+
 
     function gettodo(){
         let input = document.getElementById("input-value")
@@ -141,8 +145,6 @@
         if(todos.length){
             let stringfy = localStorage.getItem("todo")
             let parse = JSON.parse(stringfy)
-
-            let maincontainer = document.getElementById("main-container")
 
             parse.forEach(element => {
                 getvalue(element.srno,element.inputvalue)
@@ -188,8 +190,9 @@
         removed.removed();
 
         let mainContainer = document.getElementById("main-container")
-
+        mainContainer.innerHTML = ""
     }
+    prinvalue();
 
     </script>
 </body>
