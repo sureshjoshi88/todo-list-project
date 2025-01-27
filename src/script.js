@@ -231,6 +231,7 @@ actionContainer.classList.add("gap")
 let editbuton = document.createElement("button")
 editbuton.innerText = "Edit"
 editbuton.classList.add("edit")
+
 let deletebutton = document.createElement("button")
 deletebutton.innerText = "Delete"
 deletebutton.classList.add("edit1")
