@@ -97,9 +97,9 @@
         parentdiv.appendChild(childdiv2)
 
         let childh6_2 = document.createElement("h6")
-        childh6.classList.add("mb-0")
-        childh6.innerText = value
-        childdiv2.appendChild(childh6)
+        childh6_2.classList.add("mb-0")
+        childh6_2.innerText = value
+        childdiv2.appendChild(childh6_2)
 
 
         let childdiv3 = document.createElement("div")
@@ -187,7 +187,7 @@
 
 
         localStorage.setItem("todo",JSON.stringify(finaltodos))
-        removed.removed();
+        removed.remove();
 
         let mainContainer = document.getElementById("main-container")
         mainContainer.innerHTML = ""
