@@ -137,8 +137,59 @@
 
     }
 
-    function
+    function prinvalue(){
+        if(todos.length){
+            let stringfy = localStorage.getItem("todo")
+            let parse = JSON.parse(stringfy)
 
+            let maincontainer = document.getElementById("main-container")
+
+            parse.forEach(element => {
+                getvalue(element.srno,element.inputvalue)
+            });
+        }
+    }
+
+    function addfunction(){
+        let input = document.getElementById("input-value")
+        getvalue(count,input.value)
+        let value = {
+            srno:count,
+            inputvalue:input.value
+        }
+        todos.push(value)
+        localStorage.setItem("todo",JSON.stringify(todos))
+        input.value = ""
+        count++
+    }
+
+    function deletetodo(e){
+        let removed = e.target.parentElement.parentElement
+        let getsrno = removed.firstElementChild;
+        let h6 = getsrno.firstElementChild.innerText;
+
+
+        let filtertodos = todos.filter((value,key)=>{
+            if(value.srno!=h6){
+                return value;
+            }
+        })
+
+        let finaltodos = filtertodos.map((task,key)=>{
+            let value = {
+                srno:key+1,
+                inputvalue:task.inputvalue,
+            }
+            return value    
+        })
+
+
+        localStorage.setItem("todo",JSON.stringify(finaltodos))
+        removed.removed();
+
+        let mainContainer = document.getElementById("main-container")
+
+    }
 
     </script>
 </body>
