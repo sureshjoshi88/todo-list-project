@@ -174,7 +174,7 @@
    
     function searchtodo(e){
         let filtertodoslist = todos.filter((todo)=>{
-            return todo.inputvalue.icludes(e.target.value)
+            return todo.inputvalue.includes(e.target.value)
         })
         let mainContainer = document.getElementById("main-container")
         mainContainer.innerHTML = ""
