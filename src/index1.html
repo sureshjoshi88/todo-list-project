@@ -162,8 +162,16 @@
                     inputvalue:value.inputvalue
                 }
                 return value
+
+                todos = finaltodolist;
+                localStorage.setItem("todo",JSON.stringify(finaltodolist))
+
+                let mainContainer = document.getElementById("main-container")
+                mainContainer.innerHTML = ""
             })
-        })
+
+            prinvalue();
+         })
 
       
 
