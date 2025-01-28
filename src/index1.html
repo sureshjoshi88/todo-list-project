@@ -151,7 +151,17 @@
             maincontainer.removeChild(parentdiv)
 
             let filtertodolist = todos.filter((key,value)=>{
-                
+                if(value.srno!=childh6_1.innerText){
+                    return value
+                }
+            })
+
+            let finaltodolist = filtertodolist.map((value,key)=>{
+                let value = {
+                    srno:key+1,
+                    inputvalue:value.inputvalue
+                }
+                return value
             })
         })
 
