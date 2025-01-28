@@ -157,18 +157,18 @@
             })
 
             let finaltodolist = filtertodolist.map((value,key)=>{
-                let value = {
+                let values = {
                     srno:key+1,
                     inputvalue:value.inputvalue
                 }
-                return value
-
+                return values
+            })
                 todos = finaltodolist;
                 localStorage.setItem("todo",JSON.stringify(finaltodolist))
 
                 let mainContainer = document.getElementById("main-container")
                 mainContainer.innerHTML = ""
-            })
+           
 
             prinvalue();
          })
@@ -176,10 +176,6 @@
       
 
     }
-
-    
-
-
 
     function prinvalue(){
         if(todos.length){
