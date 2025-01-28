@@ -145,7 +145,15 @@
         childdiv3.appendChild(editbuton)
 
 
-        deletebuton.onclick = deletetodo;
+        // deletebuton.onclick = deletetodo;
+
+        deletebuton.addEventListener("click",()=>{
+            maincontainer.removeChild(parentdiv)
+
+            let filtertodolist = todos.filter((key,value)=>{
+                
+            })
+        })
 
       
 
