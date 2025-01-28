@@ -19,6 +19,10 @@
                                 <input type="text" id="input-value" class="form-control" placeholder="Enter Task" aria-label="Username" aria-describedby="basic-addon1">
                             <button type="button" id="buton-task" onclick="addfunction()" class="btn btn-primary">Add</button>
                         </div>
+                        <div class="d-flex  align-items-center gap-3">
+                            <input type="text" class="form-control" placeholder="Search a todo" aria-label="Username"
+                                aria-describedby="basic-addon1" id="search-input">
+                        </div>
                    </div>
                 </div>
                 <div class="col">
@@ -149,18 +153,7 @@
 
     
 
-    // function gettodo(){
-    //     let input = document.getElementById("input-value")
 
-    //     let task = {
-    //         srno:count,
-    //         inputvalue:input.value,
-    //     }
-    //     todos.push(task)
-    //     localStorage.setItem("todo",JSON.stringify(todos))
-    //     count++
-
-    // }
 
     function prinvalue(){
         if(todos.length){
@@ -173,7 +166,24 @@
         }
     }
 
+
+    let searchinput = document.getElementById("search-input")
+    searchinput.addEventListener("input",(e)=>{
+        searchtodo(e);
+    })
    
+    function searchtodo(e){
+        let filtertodoslist = todos.filter((todo)=>{
+            return todo.inputvalue.icludes(e.target.value)
+        })
+        let mainContainer = document.getElementById("main-container")
+        mainContainer.innerHTML = ""
+
+        filtertodoslist.map((element)=>{
+            getvalue(element.srno,element.inputvalue)
+        })
+
+    }
 
     function deletetodo(e){
         let removed = e.target.parentElement.parentElement;
