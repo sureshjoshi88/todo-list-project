@@ -129,7 +129,6 @@ function searchTodo(e) {
   main.innerHTML = ""
 
   filteredTodos.map((element) => {
-    console.log(element)
     addTodo(element.serialNo,element.taskValue)
   });
 
@@ -140,7 +139,6 @@ function editTodo(e){
 
   // get the new value
  let newValue =  prompt("enter new todo")
- let mainContainer = document.getElementById("main-container")
 
  //target the previous value
  let secondChild = e.target.parentElement.parentElement.getElementsByTagName('div')[1].firstElementChild
