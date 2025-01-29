@@ -2,7 +2,8 @@ let taskFromLocalStorage = JSON.parse(localStorage.getItem("tasks"))
 let tasks = taskFromLocalStorage || [];
 let count = tasks.length ? tasks[tasks.length - 1].serialNo + 1 : 1;
 
-console.log(count)
+
+let input = document.getElementById("todo-input")
 
 
 // getting the input value and calling the add function
@@ -163,11 +164,9 @@ function editTodo(e){
 
 // for deleteing the todo
 function deleteTodo(e){
-  console.log("delete button called")
   let removeRow = e.target.parentElement.parentElement;
   let getSno = removeRow.firstElementChild;
   let h6 = getSno.firstElementChild.innerText;
-  console.log(h6)
   
   let filteredTodos = tasks.filter((value,key)=>{
     if(value.serialNo != h6){
@@ -183,7 +182,6 @@ function deleteTodo(e){
     return value
   })
 
-  console.log(finalTodos)
 
 
   tasks = finalTodos;
