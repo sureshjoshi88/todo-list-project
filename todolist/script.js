@@ -8,7 +8,8 @@ console.log(count)
 // getting the input value and calling the add function
 function addFunction(){
   let input = document.getElementById("todo-input")
-  if(input.value == ""){
+  if(input.value.trim() == ""){
+    alert("please enter a value")
     return;
   }
   addTodo(count,input.value)
