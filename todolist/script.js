@@ -3,7 +3,12 @@ let tasks = taskFromLocalStorage || [];
 let count = tasks.length ? tasks[tasks.length - 1].serialNo + 1 : 1;
 
 
-let input = document.getElementById("todo-input")
+let input = document.getElementById("todo-input").addEventListener("keypress",(e)=>{
+  if(e.key=="Enter"){
+    addFunction();
+  }
+})
+
 
 
 // getting the input value and calling the add function
