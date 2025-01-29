@@ -140,6 +140,10 @@ function editTodo(e){
   // get the new value
  let newValue =  prompt("enter new todo")
 
+ if(newValue==""){
+  alert("please enter a value")
+  return;
+ }
  //target the previous value
  let secondChild = e.target.parentElement.parentElement.getElementsByTagName('div')[1].firstElementChild
 
