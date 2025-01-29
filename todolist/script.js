@@ -144,6 +144,9 @@ function editTodo(e){
   alert("please enter a value")
   return;
  }
+ if(newValue==null){
+  return;
+ }
  //target the previous value
  let secondChild = e.target.parentElement.parentElement.getElementsByTagName('div')[1].firstElementChild
 
