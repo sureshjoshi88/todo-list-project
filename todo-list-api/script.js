@@ -17,7 +17,7 @@ let filtertodos = todos.map((value,key)=>{
 main.appendChild(div)
 }
 
-function getvalue(){
+function getvalues(){
     fetch("https://jsonplaceholder.typicode.com/todos")
     .then((data)=>{
         return data.json()
@@ -30,4 +30,4 @@ function getvalue(){
     })
 }
 
-getvalue();
+getvalues();
