@@ -19,7 +19,7 @@ main.appendChild(div)
 
 function getvalue(){
     fetch("https://jsonplaceholder.typicode.com/todos")
-    .then((data)=>{
+    .then((value)=>{
         return data.json()
     }).then((data)=>{
         todos = data
