@@ -9,7 +9,7 @@ let div = document.createElement("div")
 let filtertodos = todos.map((value,key)=>{
     let h3 = document.createElement("h3")
     let hr = document.createElement("hr")
-    h3.innerText = value.title
+    h3.innerText = value.id
     div.appendChild(h3)
     div.appendChild(hr)
 
