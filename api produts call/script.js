@@ -17,7 +17,7 @@ function createProduct(data){
 
     // <div class="card" style="width: 100%;" >
     let cardDiv = document.createElement("div")
-    cardDiv.classList.add('card','w-100',)
+    cardDiv.classList.add('card','w-100',"p-2","pt-3")
     cardDiv.style.height = "100%"
 
     // <img src="" style="height: 200px; object-fit: contain;" class="card-img-top" alt="...">
