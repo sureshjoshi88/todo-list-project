@@ -81,4 +81,3 @@ function fetchProducts(){
 }
 
 fetchProducts()
-createProduct(data)
