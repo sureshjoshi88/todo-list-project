@@ -65,7 +65,7 @@ function createProduct(data){
 
 
 function fetchProducts(){
-    fetch('https://fakestoreapi.com/products')
+    fetch('https://fakestoreapi.in/api/products')
     .then((data)=>{
         return data.json()
     })
@@ -76,7 +76,7 @@ function fetchProducts(){
         })
     })
     .catch((err)=>{
-        console.log(err)
+        console.log(err,"faild are data ")
     })
 }
 
