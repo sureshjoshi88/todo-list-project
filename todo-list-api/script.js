@@ -1,6 +1,5 @@
 let main = document.getElementById("main")
 
-
 let todos = []
 
 function printvalue(){
@@ -22,7 +21,6 @@ let filtertodos = todos.map((value,key)=>{
 })
 main.appendChild(div)
 }
-
 function getvalues(){
     fetch("https://jsonplaceholder.typicode.com/todos")
     .then((data)=>{
