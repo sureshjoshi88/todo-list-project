@@ -1,13 +1,7 @@
 
 let row = document.getElementById("row")
 
-// let data = {
-//     title: "Mens Casual Premium Slim Fit T-Shirts",
-//     description : "",
-//     img: "",
-//     price: "",
-//     rating: ""
-// }
+
 
 
 function createProduct(data){
