@@ -41,7 +41,7 @@ function createProduct(data){
 
     // <p>₹ 109.95</p> 
     let price = document.createElement("p")
-    price.innerText = "₹ " + data.price ? data.price : "no price found"
+    price.innerText = "₹ " + data.price ? "₹ " + data.price : "no price found"
 
     // <p>⭐ 3.9</p>
      let rating = document.createElement("p")
