@@ -45,7 +45,7 @@ function createProduct(data){
 
     // <p>⭐ 3.9</p>
      let rating = document.createElement("p")
-     rating.innerText = "⭐ " + data.rating.rate
+     rating.innerText = "⭐ " + data.rating.rate ? data.rating.rate : "no rating"
 
      row.appendChild(screenSizeDiv)
     screenSizeDiv.appendChild(cardDiv)
