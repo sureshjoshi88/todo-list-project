@@ -36,7 +36,7 @@ function createProduct(data){
     let cardText = document.createElement("p")
     cardText.style.color = "gray";
     cardText.classList.add('card-text')
-    cardText.innerText = data.description
+    cardText.innerText = data.description ? data.description : "no description found"
 
 
     // <p>₹ 109.95</p> 
