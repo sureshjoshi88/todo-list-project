@@ -53,4 +53,4 @@ function createrates(){
 setTimeout(()=>{
     createrates();
 
-},2000)
+},1000)
