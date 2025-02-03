@@ -10,7 +10,7 @@ function createrates(){
         obj = data.bpi
 
         mainROw.innerHTML = `
-        <div class="col-12">
+        <div class="col-12 mt-2">
             <h3 class="text-center" >Bitcoin </h3>
         </div>
 
