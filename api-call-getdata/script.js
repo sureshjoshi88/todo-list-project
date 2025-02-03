@@ -32,7 +32,7 @@ function createrates(){
 
             </div>
         </div>
-        <div class="col-lg-4" >
+        <div class="col-lg-4 mt-3" >
             <div class="card px-3 py-3" >
                 <h4>${obj.EUR.code}</h4>
                 <p>${obj.EUR.symbol}<span>${obj.EUR.rate}</span></p>
