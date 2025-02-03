@@ -14,7 +14,7 @@ function createrates(){
             <h3 class="text-center" >Bitcoin </h3>
         </div>
 
-        <div class="col-lg-4" >
+        <div class="col-lg-4 mt-3" >
             <div class="card px-3 py-3" >
                 <h4>${obj.USD.code}</h4>
                 <p>${obj.USD.symbol} <span>${obj.USD.rate}</span></p>
@@ -23,7 +23,7 @@ function createrates(){
 
             </div>
         </div>
-        <div class="col-lg-4" >
+        <div class="col-lg-4 mt-3" >
             <div class="card px-3 py-3" >
                 <h4>${obj.GBP.code}</h4>
                 <p>${obj.GBP.symbol}<span>${obj.GBP.rate}</span></p>
