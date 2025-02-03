@@ -19,6 +19,8 @@ function createrates(){
                 <h4>${obj.USD.code}</h4>
                 <p>${obj.USD.symbol} <span>${obj.USD.rate}</span></p>
                 <p>${obj.USD.description}</p>
+                <p>${obj.USD.rate_float}</p>
+
             </div>
         </div>
         <div class="col-lg-4" >
@@ -26,6 +28,8 @@ function createrates(){
                 <h4>${obj.GBP.code}</h4>
                 <p>${obj.GBP.symbol}<span>${obj.GBP.rate}</span></p>
                 <p>${obj.GBP.description}</p>
+                <p>${obj.GBP.rate_float}</p>
+
             </div>
         </div>
         <div class="col-lg-4" >
@@ -33,6 +37,7 @@ function createrates(){
                 <h4>${obj.EUR.code}</h4>
                 <p>${obj.EUR.symbol}<span>${obj.EUR.rate}</span></p>
                 <p>${obj.EUR.description}</p>
+                <p>${obj.EUR.rate_float}</p>
             </div>
         </div>`
 
