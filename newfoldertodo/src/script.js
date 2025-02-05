@@ -75,20 +75,20 @@ function addTodo(sno = 1, value) {
   
 //   getTodos()
 
-function getTodos(){
-    fetch("http://4.240.85.243:3000/todos")
-    .then((data)=>{
-        return data.json()
-    })
-    .then((data)=>{
-        // todos = data.todos;
-        data.todos.map((value,key)=>{
-            addTodo(key+1,value.title)
-        })
-    })
-    .catch((err)=>{
-        console.log("something went wrong",err);
+// function getTodos(){
+//     fetch("http://4.240.85.243:3000/todos")
+//     .then((data)=>{
+//         return data.json()
+//     })
+//     .then((data)=>{
+//         // todos = data.todos;
+//         data.todos.map((value,key)=>{
+//             addTodo(key+1,value.title)
+//         })
+//     })
+//     .catch((err)=>{
+//         console.log("something went wrong",err);
         
-    })
-}
-getTodos();
+//     })
+// }
+// getTodos();
