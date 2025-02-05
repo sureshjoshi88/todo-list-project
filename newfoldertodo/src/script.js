@@ -95,10 +95,10 @@ function addTodo(sno = 1, value) {
 function gettodo(){
     fetch("http://4.240.85.243:3000/todos")
     .then((data)=>{
-        data.json()
+       return data.json()
     })
     .then((data)=>{
-        data.todos.map((key,value)=>{
+        data.todos.map((value,key)=>{
             addTodo(key+1,value.title)
         })
     })
@@ -107,4 +107,5 @@ function gettodo(){
         
     })
 }
+gettodo();
 
