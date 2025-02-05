@@ -81,8 +81,8 @@ function getTodos(){
         return data.json()
     })
     .then((data)=>{
-        todos = data.todos;
-        todos.map((value,key)=>{
+        // todos = data.todos;
+        data.todos.map((value,key)=>{
             addTodo(key+1,value.title)
         })
     })
