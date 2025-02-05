@@ -83,7 +83,7 @@ function getTodos(){
     .then((data)=>{
         todos = data.todos;
         todos.map((value,key)=>{
-            addTodo(value.title),key+1
+            addTodo(key+1,value.title)
         })
     })
     .catch((err)=>{
@@ -91,3 +91,4 @@ function getTodos(){
         
     })
 }
+getTodos();
