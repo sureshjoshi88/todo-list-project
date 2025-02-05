@@ -61,51 +61,19 @@ function addTodo(sno = 1, value) {
 }
 
 
-// function getTodos(){
-//     fetch("http://4.240.85.243:3000/todos")
-//       .then((response) => response.json())
-//       .then((result) => {
-//         todos = result.todos;
-//         todos.map((value,key)=>{
-//           addTodo(key+1,value.title)
-//         })
-//       })
-//       .catch((error) => console.error(error));
-//   }
-  
-//   getTodos()
-
-// function getTodos(){
-//     fetch("http://4.240.85.243:3000/todos")
-//     .then((data)=>{
-//         return data.json()
-//     })
-//     .then((data)=>{
-//         // todos = data.todos;
-//         data.todos.map((value,key)=>{
-//             addTodo(key+1,value.title)
-//         })
-//     })
-//     .catch((err)=>{
-//         console.log("something went wrong",err);
-        
-//     })
-// }
-// getTodos();
-function gettodo(){
+function getTodos(){
     fetch("http://4.240.85.243:3000/todos")
-    .then((data)=>{
-       return data.json()
-    })
-    .then((data)=>{
-        data.todos.map((value,key)=>{
-            addTodo(key+1,value.title)
+      .then((response) => response.json())
+      .then((result) => {
+        todos = result.todos;
+        todos.map((value,key)=>{
+          addTodo(key+1,value.title)
         })
-    })
-    .catch((err)=>{
-        console.log(err);
-        
-    })
-}
-gettodo();
+      })
+      .catch((error) => console.error(error));
+  }
+  
+  getTodos()
+
+
 
