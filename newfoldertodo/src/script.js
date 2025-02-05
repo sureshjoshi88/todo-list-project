@@ -61,16 +61,33 @@ function addTodo(sno = 1, value) {
 }
 
 
+// function getTodos(){
+//     fetch("http://4.240.85.243:3000/todos")
+//       .then((response) => response.json())
+//       .then((result) => {
+//         todos = result.todos;
+//         todos.map((value,key)=>{
+//           addTodo(key+1,value.title)
+//         })
+//       })
+//       .catch((error) => console.error(error));
+//   }
+  
+//   getTodos()
+
 function getTodos(){
     fetch("http://4.240.85.243:3000/todos")
-      .then((response) => response.json())
-      .then((result) => {
-        todos = result.todos;
+    .then((data)=>{
+        return data.json()
+    })
+    .then((data)=>{
+        todos = data.todos;
         todos.map((value,key)=>{
-          addTodo(key+1,value.title)
+            addTodo(value.title),key+1
         })
-      })
-      .catch((error) => console.error(error));
-  }
-  
-  getTodos()
+    })
+    .catch((err)=>{
+        console.log("something went wrong",err);
+        
+    })
+}
