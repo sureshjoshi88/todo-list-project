@@ -92,3 +92,19 @@ function addTodo(sno = 1, value) {
 //     })
 // }
 // getTodos();
+function gettodo(){
+    fetch("http://4.240.85.243:3000/todos")
+    .then((data)=>{
+        data.json()
+    })
+    .then((data)=>{
+        data.todos.map((key,value)=>{
+            addTodo(key+1,value.title)
+        })
+    })
+    .catch((err)=>{
+        console.log(err);
+        
+    })
+}
+
