@@ -78,7 +78,45 @@ function getTodos(){
       });
   }
   
-setTimeout(getTodos,3000)
+// setTimeout(getTodos,3000)
+
+function add(title) {
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  const raw = JSON.stringify({
+    "title": title,
+    "description": "this is my fifth description"
+  });
+
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+  };
+
+  fetch("http://4.240.85.243:3000/todos", requestOptions)
+    .then((response) => response.json())
+    .then((result) => {
+      getTodos()
+    })
+    .catch((error) => console.error(error));
+}
+
+
+function addButton(){
+
+  let input = document.getElementById("todo-input")
+  if(input.value==""){
+    return;
+  }
+  add(input.value)
+
+  input.value = "";
+}
+
+
+getTodos()
 
 
 
