@@ -62,6 +62,7 @@ function addTodo(sno = 1, value) {
 
 
 function getTodos(){
+
     fetch("http://4.240.85.243:3000/todos")
       .then((response) => response.json())
       .then((result) => {
@@ -78,6 +79,7 @@ function getTodos(){
       });
   }
   
+
 
 function add(title) {
   const myHeaders = new Headers();
