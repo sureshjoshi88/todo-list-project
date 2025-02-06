@@ -78,7 +78,7 @@ function getTodos(){
       });
   }
   
-  getTodos()
+setTimeout(getTodos,3000)
 
 
 
