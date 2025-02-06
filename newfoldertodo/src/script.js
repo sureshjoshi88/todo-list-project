@@ -78,7 +78,6 @@ function getTodos(){
       });
   }
   
-// setTimeout(getTodos,3000)
 
 function add(title) {
   const myHeaders = new Headers();
