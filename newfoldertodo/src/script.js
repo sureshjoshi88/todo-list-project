@@ -70,7 +70,12 @@ function getTodos(){
           addTodo(key+1,value.title)
         })
       })
-      .catch((error) => console.error(error));
+      .catch((error) =>{
+        console.log(error);
+        let container = document.getElementById("main-container").innerHTML =`<h1>something went wrong please try again</h1>`
+
+        
+      });
   }
   
   getTodos()
