@@ -36,7 +36,7 @@ function addTodo(sno = 1, value) {
 
   //create col with edit and delete button
   let childDiv_3 = document.createElement("div")
-  childDiv_3.classList.add('col-lg-3',"col-md-3","col-sm-12")
+  childDiv_3.classList.add('col-lg-3',"col-md-3","col-sm-12","mt-3")
   childDiv_3.classList.add("d-flex")
   childDiv_3.classList.add("align-items-center")
   childDiv_3.classList.add("gap-1")
