@@ -82,8 +82,8 @@ function add(title) {
   myHeaders.append("Content-Type", "application/json");
 
   const raw = JSON.stringify({
-    "title": "",
-    "description": ""
+    "title": title,
+    "description": "the description is first"
   });
 
   const requestOptions = {
