@@ -55,11 +55,7 @@ function addTodo(sno = 1, value) {
   delete_button.classList.add("btn")
   delete_button.classList.add("btn-danger")
   childDiv_3.appendChild(delete_button)
-
-
-
 }
-
 
 function getTodos(){
 
