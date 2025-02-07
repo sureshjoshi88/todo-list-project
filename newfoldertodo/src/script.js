@@ -107,16 +107,16 @@ function add(title) {
 
 function addButton(){
 
-  let input = document.getElementById("todo-input")
+  let input = document.getElementById("todo-input");
   if(input.value==""){
     return;
   }
-  add(input.value)
+  add(input.value);
 
   input.value = "";
 }
 
-getTodos()
+getTodos();
 
 
 
