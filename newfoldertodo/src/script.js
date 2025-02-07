@@ -68,7 +68,6 @@ function getTodos(){
         })
       })
       .catch((error) =>{
-        console.log(error);
         let container = document.getElementById("main-container").innerHTML =`<h1>something went wrong please try again</h1>`
 
         
@@ -112,6 +111,8 @@ function add(title) {
           onClick: function(){}
         }).showToast();
       }else{
+        let main = document.getElementById("main-container")
+        main.innerHTML = ""
         getTodos()
       }
     })
