@@ -82,8 +82,8 @@ function add(title) {
   myHeaders.append("Content-Type", "application/json");
 
   const raw = JSON.stringify({
-    "title": title,
-    "description": "this is my fifth description"
+    "title": "",
+    "description": ""
   });
 
   const requestOptions = {
@@ -95,7 +95,25 @@ function add(title) {
   fetch("http://4.240.85.243:3000/todos", requestOptions)
     .then((response) => response.json())
     .then((result) => {
-      getTodos()
+      if(result.message){
+        Toastify({
+          text: result.message,
+          duration: 3000,
+          destination: "https://github.com/apvarun/toastify-js",
+          newWindow: true,
+          close: true,
+          gravity: "top",
+          position: "right",
+          stopOnFocus: true, 
+          style: {
+            background: "red",
+            color:"white"
+          },
+          onClick: function(){}
+        }).showToast();
+      }else{
+        getTodos()
+      }
     })
     .catch((error) => console.error(error));
 }
