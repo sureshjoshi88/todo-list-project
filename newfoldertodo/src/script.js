@@ -14,7 +14,7 @@ function addTodo(sno = 1, value) {
 
   //created col with h6 child
   let childDiv_1 = document.createElement("div")
-  childDiv_1.classList.add('col')
+  childDiv_1.classList.add('col-lg-2',"col-md-6","col-sm-12")
   parentDiv.appendChild(childDiv_1)
 
   let childH6_1 = document.createElement("h6");
@@ -25,7 +25,7 @@ function addTodo(sno = 1, value) {
 
   //created col-8 with h6 child
   let childDiv_2 = document.createElement("div")
-  childDiv_2.classList.add('col-8')
+  childDiv_2.classList.add("col-lg-2","col-md-6","col-sm-12")
   parentDiv.appendChild(childDiv_2)
 
   let childH6_2 = document.createElement("h6");
