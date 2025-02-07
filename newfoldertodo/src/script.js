@@ -130,7 +130,7 @@ function addButton(){
   input.value = "";
 }
 
-getTodos();
+getTodos();  
 
 
 
