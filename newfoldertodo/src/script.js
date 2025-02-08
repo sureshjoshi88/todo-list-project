@@ -124,7 +124,22 @@ function addButton(){
 
   let input = document.getElementById("todo-input");
   if(input.value.trim()==""){
-    alert("please enter value")
+    // alert("please enter value")
+    Toastify({
+      text: "please enter a value",
+      duration: 3000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "top",
+      position: "left",
+      stopOnFocus: true, 
+      style: {
+        background: "red",
+        color:"white"
+      },
+      onClick: function(){}
+    }).showToast();
     return;
 
   }
