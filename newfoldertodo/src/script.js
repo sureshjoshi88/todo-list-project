@@ -123,8 +123,10 @@ function add(title) {
 function addButton(){
 
   let input = document.getElementById("todo-input");
-  if(input.value==""){
+  if(input.value.trim()==""){
+    alert("please enter value")
     return;
+
   }
   add(input.value);
 
