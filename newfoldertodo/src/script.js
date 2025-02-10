@@ -1,10 +1,11 @@
 
 // to create the todo row
-function addTodo(sno = 1, value) {
+function addTodo(sno = 1, value,id) {
   let container = document.getElementById("main-container")
 
   //created parent row
   let parentDiv = document.createElement("div")
+  parentDiv.id = id;
   parentDiv.classList.add('row')
   parentDiv.classList.add('align-items-center')
   parentDiv.classList.add('border-bottom')
@@ -55,6 +56,13 @@ function addTodo(sno = 1, value) {
   delete_button.classList.add("btn")
   delete_button.classList.add("btn-danger")
   childDiv_3.appendChild(delete_button)
+
+
+  edit_button.addEventListener('click',(e)=>{
+    console.log(e.target.parentElement.parentElement.id)
+    let title = prompt("enter new title");
+    update(e.target.parentElement.parentElement.id,title)
+  })
 }
 
 function getTodos(){
@@ -64,7 +72,7 @@ function getTodos(){
       .then((result) => {
         todos = result.todos;
         todos.map((value,key)=>{
-          addTodo(key+1,value.title)
+          addTodo(key+1,value.title,value._id)
         })
       })
       .catch((error) =>{
@@ -146,6 +154,53 @@ function addButton(){
 
   input.value = "";
 }
+
+
+function update(id,title) {
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  const raw = JSON.stringify({
+    "title": title,
+    "description": "the description is first"
+  });
+
+  const requestOptions = {
+    method: "PATCH",
+    headers: myHeaders,
+    body: raw, 
+  };
+
+  fetch(`http://4.240.85.243:3000/todos/${id}`, requestOptions)
+    .then((response) => response.json())
+    .then((result) => {
+      if(result.message == "Todo updated successfully"){
+        Toastify({
+          text: result.message,
+          duration: 3000,
+          destination: "https://github.com/apvarun/toastify-js",
+          newWindow: true,
+          close: true,
+          gravity: "top",
+          position: "right",
+          stopOnFocus: true, 
+          style: {
+            background: "red",
+            color:"white"
+          },
+          onClick: function(){}
+        }).showToast();
+        let main = document.getElementById("main-container")
+        main.innerHTML = ""
+        getTodos()
+      }else{
+        console.log(result)
+      }
+    })
+    .catch((error) => console.error(error));
+}
+
+// update("67a304be33fb315fb4ec6776","this")
 
 getTodos();  
 
