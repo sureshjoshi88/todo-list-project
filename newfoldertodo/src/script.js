@@ -81,7 +81,6 @@ function getTodos(){
         
       });
   }
-  
 
 
 function add(title) {
