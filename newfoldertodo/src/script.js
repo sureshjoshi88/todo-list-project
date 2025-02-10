@@ -200,8 +200,6 @@ function update(id,title) {
     .catch((error) => console.error(error));
 }
 
-// update("67a304be33fb315fb4ec6776","this")
-
 getTodos();  
 
 
