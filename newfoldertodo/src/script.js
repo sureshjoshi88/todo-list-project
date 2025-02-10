@@ -124,7 +124,6 @@ function addButton(){
 
   let input = document.getElementById("todo-input");
   if(input.value.trim()==""){
-    // alert("please enter value")
     Toastify({
       text: "please enter a value",
       duration: 3000,
