@@ -148,10 +148,12 @@ function addButton(){
     }).showToast();
     return;
 
-  }
-  add(input.value);
+  }{
 
-  input.value = "";
+    add(input.value);
+  
+    input.value = "";
+  }
 }
 
 
