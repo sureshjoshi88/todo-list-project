@@ -63,6 +63,11 @@ function addTodo(sno = 1, value,id) {
     let title = prompt("enter new title");
     update(e.target.parentElement.parentElement.id,title)
   })
+
+  delete_button.addEventListener('click',(e)=>{
+    console.log(e.target.parentElement.parentElement.id)
+    deleteTodo(e.target.parentElement.parentElement.id)
+  })
 }
 
 function getTodos(){
@@ -186,7 +191,7 @@ function update(id,title) {
           position: "right",
           stopOnFocus: true, 
           style: {
-            background: "red",
+            background: "green",
             color:"white"
           },
           onClick: function(){}
@@ -200,6 +205,58 @@ function update(id,title) {
     })
     .catch((error) => console.error(error));
 }
+
+function deleteTodo(id){
+  const requestOptions = {
+    method: "DELETE",
+    redirect: "follow"
+  };
+  
+  fetch(`http://4.240.85.243:3000/todos/${id}`, requestOptions)
+    .then((response) => response.json())
+    .then((result) => {
+      if(result.message == "Todo not found"){
+        Toastify({
+          text: result.message,
+          duration: 3000,
+          destination: "https://github.com/apvarun/toastify-js",
+          newWindow: true,
+          close: true,
+          gravity: "top",
+          position: "right",
+          stopOnFocus: true, 
+          style: {
+            background: "red",
+            color:"white"
+          },
+          onClick: function(){}
+        }).showToast();
+      } else if(result.message == "Todo deleted successfully"){
+        Toastify({
+          text: result.message,
+          duration: 3000,
+          destination: "https://github.com/apvarun/toastify-js",
+          newWindow: true,
+          close: true,
+          gravity: "top",
+          position: "right",
+          stopOnFocus: true, 
+          style: {
+            background: "green",
+            color:"white"
+          },
+          onClick: function(){}
+        }).showToast();
+
+        let main = document.getElementById("main-container")
+        main.innerHTML = ""
+        getTodos()
+      }
+    })
+    .catch((error) => console.error(error));
+}
+
+// deleteTodo()
 
 getTodos();  
 
