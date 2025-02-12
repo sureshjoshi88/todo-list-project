@@ -282,7 +282,6 @@ function deleteTodo(id) {
     .catch((error) => console.error(error));
 }
 
-// deleteTodo()
 
 
 
