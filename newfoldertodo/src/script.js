@@ -93,7 +93,6 @@ function getTodos(title="") {
         todos.map((value, key) => {
           addTodo(key + 1, value.title, value._id)
         })
-
       }
     })
     .catch((error) => {
@@ -182,7 +181,7 @@ let input = document.getElementById("todo-input").addEventListener("keypress", (
   console.log(e)
   if (e.key == "Enter") {
     add(e.target.value);
-    input.value = "";
+    e.target.value = "";
   }
 })
 
