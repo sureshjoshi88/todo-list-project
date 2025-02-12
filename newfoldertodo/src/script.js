@@ -70,7 +70,7 @@ function addTodo(sno = 1, value, id) {
   })
 }
 
-function getTodos(title="") {
+function getTodos(title = "") {
 
   let loading = true;
 
@@ -85,7 +85,7 @@ function getTodos(title="") {
       if (todos.length == 0) {
         loading = false;
         let container = document.getElementById("main-container");
-        container.innerHTML = innerHTML = `<h4 class="d-flex justify-content-center" >no data found</h4>`
+        container.innerHTML =  `<h4 class="d-flex justify-content-center" >no data found</h4>`
       } else {
         loading = false;
         let container = document.getElementById("main-container");
@@ -102,7 +102,6 @@ function getTodos(title="") {
 
     });
 }
-
 
 function add(title) {
   const myHeaders = new Headers();
@@ -147,7 +146,6 @@ function add(title) {
     .catch((error) => console.error(error));
 }
 
-
 function addButton() {
 
   let input = document.getElementById("todo-input");
@@ -184,8 +182,6 @@ let input = document.getElementById("todo-input").addEventListener("keypress", (
     e.target.value = "";
   }
 })
-
-
 
 function update(id, title) {
   const myHeaders = new Headers();
@@ -281,15 +277,10 @@ function deleteTodo(id) {
     .catch((error) => console.error(error));
 }
 
-
-
-
-
-function onSearch(){
+function onSearch() {
   let SearchInput = document.getElementById("search-input")
   getTodos(SearchInput.value)
 }
-
 getTodos();
 
 
