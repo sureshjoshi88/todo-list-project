@@ -80,7 +80,7 @@ function getTodos(title = "") {
       todos = result.todos;
       if (loading) {
         let container = document.getElementById("main-container");
-        container.innerHTML = innerHTML = `<h4 class="d-flex justify-content-center" >loading....</h4>`
+        container.innerHTML = `<h4 class="d-flex justify-content-center" >loading....</h4>`
       }
       if (todos.length == 0) {
         loading = false;
