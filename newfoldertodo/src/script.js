@@ -154,7 +154,7 @@ function addButton(){
     }).showToast();
     return;
 
-  }{
+  }else{
 
     add(input.value);
   
