@@ -282,10 +282,3 @@ function onSearch() {
 }
 getTodos();
 
-
-
-
-
-
-
-
