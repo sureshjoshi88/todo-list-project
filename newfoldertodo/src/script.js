@@ -81,7 +81,8 @@ function getTodos(){
         })
       })
       .catch((error) =>{
-        let container = document.getElementById("main-container").innerHTML =`<h1>something went wrong please try again</h1>`
+        let container = document.getElementById("main-container");
+        container.innerHTML = innerHTML = "<h1>something went wrong please try again</h1>"
 
         
       });
