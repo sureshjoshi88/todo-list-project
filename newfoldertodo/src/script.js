@@ -1,6 +1,6 @@
 
 // to create the todo row
-function addTodo(sno = 1, value,id) {
+function addTodo(sno = 1, value, id) {
   let container = document.getElementById("main-container")
 
   //created parent row
@@ -15,7 +15,7 @@ function addTodo(sno = 1, value,id) {
 
   //created col with h6 child
   let childDiv_1 = document.createElement("div")
-  childDiv_1.classList.add('col-lg-2',"col-md-2","col-sm-12","mt-3")
+  childDiv_1.classList.add('col-lg-2', "col-md-2", "col-sm-12", "mt-3")
   parentDiv.appendChild(childDiv_1)
 
   let childH6_1 = document.createElement("h6");
@@ -26,7 +26,7 @@ function addTodo(sno = 1, value,id) {
 
   //created col-8 with h6 child
   let childDiv_2 = document.createElement("div")
-  childDiv_2.classList.add("col-lg-7","col-md-7","col-sm-12","mt-3")
+  childDiv_2.classList.add("col-lg-7", "col-md-7", "col-sm-12", "mt-3")
   parentDiv.appendChild(childDiv_2)
 
   let childH6_2 = document.createElement("h6");
@@ -37,7 +37,7 @@ function addTodo(sno = 1, value,id) {
 
   //create col with edit and delete button
   let childDiv_3 = document.createElement("div")
-  childDiv_3.classList.add('col-lg-3',"col-md-3","col-sm-12","mt-3")
+  childDiv_3.classList.add('col-lg-3', "col-md-3", "col-sm-12", "mt-3")
   childDiv_3.classList.add("d-flex")
   childDiv_3.classList.add("align-items-center")
   childDiv_3.classList.add("gap-1")
@@ -58,35 +58,51 @@ function addTodo(sno = 1, value,id) {
   childDiv_3.appendChild(delete_button)
 
 
-  edit_button.addEventListener('click',(e)=>{
+  edit_button.addEventListener('click', (e) => {
     console.log(e.target.parentElement.parentElement.id)
     let title = prompt("enter new title");
-    update(e.target.parentElement.parentElement.id,title)
+    update(e.target.parentElement.parentElement.id, title)
   })
 
-  delete_button.addEventListener('click',(e)=>{
+  delete_button.addEventListener('click', (e) => {
     console.log(e.target.parentElement.parentElement.id)
     deleteTodo(e.target.parentElement.parentElement.id)
   })
 }
 
-function getTodos(){
+function getTodos(title="") {
 
-    fetch("http://4.240.85.243:3000/todos")
-      .then((response) => response.json())
-      .then((result) => {
-        todos = result.todos;
-        todos.map((value,key)=>{
-          addTodo(key+1,value.title,value._id)
-        })
-      })
-      .catch((error) =>{
+  let loading = true;
+
+  fetch(`http://4.240.85.243:3000/todos?title=${title}`)
+    .then((response) => response.json())
+    .then((result) => {
+      todos = result.todos;
+      if (loading) {
         let container = document.getElementById("main-container");
-        container.innerHTML = innerHTML = "<h1>something went wrong please try again</h1>"
+        container.innerHTML = innerHTML = `<h4 class="d-flex justify-content-center" >loading....</h4>`
+      }
+      if (todos.length == 0) {
+        loading = false;
+        let container = document.getElementById("main-container");
+        container.innerHTML = innerHTML = `<h4 class="d-flex justify-content-center" >no data found</h4>`
+      } else {
+        loading = false;
+        let container = document.getElementById("main-container");
+        container.innerHTML = ""
+        todos.map((value, key) => {
+          addTodo(key + 1, value.title, value._id)
+        })
 
-        
-      });
-  }
+      }
+    })
+    .catch((error) => {
+      let container = document.getElementById("main-container");
+      container.innerHTML = innerHTML = "<h1>something went wrong please try again</h1>"
+
+
+    });
+}
 
 
 function add(title) {
@@ -101,13 +117,13 @@ function add(title) {
   const requestOptions = {
     method: "POST",
     headers: myHeaders,
-    body: raw, 
+    body: raw,
   };
 
   fetch("http://4.240.85.243:3000/todos", requestOptions)
     .then((response) => response.json())
     .then((result) => {
-      if(result.message){
+      if (result.message) {
         Toastify({
           text: result.message,
           duration: 3000,
@@ -116,14 +132,14 @@ function add(title) {
           close: true,
           gravity: "top",
           position: "right",
-          stopOnFocus: true, 
+          stopOnFocus: true,
           style: {
             background: "red",
-            color:"white"
+            color: "white"
           },
-          onClick: function(){}
+          onClick: function () { }
         }).showToast();
-      }else{
+      } else {
         let main = document.getElementById("main-container")
         main.innerHTML = ""
         getTodos()
@@ -133,10 +149,10 @@ function add(title) {
 }
 
 
-function addButton(){
+function addButton() {
 
   let input = document.getElementById("todo-input");
-  if(input.value.trim()==""){
+  if (input.value.trim() == "") {
     Toastify({
       text: "please enter a value",
       duration: 3000,
@@ -145,25 +161,34 @@ function addButton(){
       close: true,
       gravity: "top",
       position: "left",
-      stopOnFocus: true, 
+      stopOnFocus: true,
       style: {
         background: "red",
-        color:"white"
+        color: "white"
       },
-      onClick: function(){}
+      onClick: function () { }
     }).showToast();
     return;
 
-  }else{
+  } else {
 
     add(input.value);
-  
+
     input.value = "";
   }
 }
 
+let input = document.getElementById("todo-input").addEventListener("keypress", (e) => {
+  console.log(e)
+  if (e.key == "Enter") {
+    add(e.target.value);
+    input.value = "";
+  }
+})
 
-function update(id,title) {
+
+
+function update(id, title) {
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
@@ -175,13 +200,13 @@ function update(id,title) {
   const requestOptions = {
     method: "PATCH",
     headers: myHeaders,
-    body: raw, 
+    body: raw,
   };
 
   fetch(`http://4.240.85.243:3000/todos/${id}`, requestOptions)
     .then((response) => response.json())
     .then((result) => {
-      if(result.message == "Todo updated successfully"){
+      if (result.message == "Todo updated successfully") {
         Toastify({
           text: result.message,
           duration: 3000,
@@ -190,33 +215,33 @@ function update(id,title) {
           close: true,
           gravity: "top",
           position: "right",
-          stopOnFocus: true, 
+          stopOnFocus: true,
           style: {
             background: "green",
-            color:"white"
+            color: "white"
           },
-          onClick: function(){}
+          onClick: function () { }
         }).showToast();
         let main = document.getElementById("main-container")
         main.innerHTML = ""
         getTodos()
-      }else{
+      } else {
         console.log(result)
       }
     })
     .catch((error) => console.error(error));
 }
 
-function deleteTodo(id){
+function deleteTodo(id) {
   const requestOptions = {
     method: "DELETE",
     redirect: "follow"
   };
-  
+
   fetch(`http://4.240.85.243:3000/todos/${id}`, requestOptions)
     .then((response) => response.json())
     .then((result) => {
-      if(result.message == "Todo not found"){
+      if (result.message == "Todo not found") {
         Toastify({
           text: result.message,
           duration: 3000,
@@ -225,14 +250,14 @@ function deleteTodo(id){
           close: true,
           gravity: "top",
           position: "right",
-          stopOnFocus: true, 
+          stopOnFocus: true,
           style: {
             background: "red",
-            color:"white"
+            color: "white"
           },
-          onClick: function(){}
+          onClick: function () { }
         }).showToast();
-      } else if(result.message == "Todo deleted successfully"){
+      } else if (result.message == "Todo deleted successfully") {
         Toastify({
           text: result.message,
           duration: 3000,
@@ -241,12 +266,12 @@ function deleteTodo(id){
           close: true,
           gravity: "top",
           position: "right",
-          stopOnFocus: true, 
+          stopOnFocus: true,
           style: {
             background: "green",
-            color:"white"
+            color: "white"
           },
-          onClick: function(){}
+          onClick: function () { }
         }).showToast();
 
         let main = document.getElementById("main-container")
@@ -259,7 +284,20 @@ function deleteTodo(id){
 
 // deleteTodo()
 
-getTodos();  
+
+
+
+function onSearch(){
+  let SearchInput = document.getElementById("search-input")
+  getTodos(SearchInput.value)
+}
+
+getTodos();
+
+
+
+
+
 
 
 
