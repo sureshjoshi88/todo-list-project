@@ -170,7 +170,6 @@ function addButton() {
   } else {
 
     add(input.value);
-
     input.value = "";
   }
 }
