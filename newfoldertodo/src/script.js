@@ -99,7 +99,6 @@ function getTodos(title = "") {
       let container = document.getElementById("main-container");
       container.innerHTML = innerHTML = "<h1>something went wrong please try again</h1>"
 
-
     });
 }
 
