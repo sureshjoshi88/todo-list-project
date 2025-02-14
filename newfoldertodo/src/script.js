@@ -85,7 +85,7 @@ function getTodos(title = "") {
       if (todos.length == 0) {
         loading = false;
         let container = document.getElementById("main-container");
-        container.innerHTML =  `<h4 class="d-flex justify-content-center" >no data found</h4>`
+        container.innerHTML = `<h4 class="d-flex justify-content-center" >no data found</h4>`
       } else {
         loading = false;
         let container = document.getElementById("main-container");
