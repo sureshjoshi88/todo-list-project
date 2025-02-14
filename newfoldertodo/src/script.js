@@ -272,7 +272,7 @@ function deleteTodo(id) {
         getTodos()
       }
     })
-    .catch((error) => console.error(error));
+    .catch((error) => console.log(error));
 }
 
 function onSearch() {
