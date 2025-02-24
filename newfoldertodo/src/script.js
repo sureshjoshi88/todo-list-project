@@ -142,7 +142,7 @@ function add(title) {
         getTodos()
       }
     })
-    .catch((error) => console.error(error));
+    .catch((error) => console.log(error));
 }
 
 function addButton() {
