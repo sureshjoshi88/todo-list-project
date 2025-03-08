@@ -174,7 +174,7 @@ function addButton() {
 }
 
 let input = document.getElementById("todo-input").addEventListener("keypress", (e) => {
-  console.log(e)
+  // console.log(e)
   if (e.key == "Enter") {
     add(e.target.value);
     e.target.value = "";
