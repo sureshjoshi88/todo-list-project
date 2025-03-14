@@ -3,8 +3,8 @@ let tasks = taskFromLocalStorage || [];
 let count = tasks.length ? tasks[tasks.length - 1].serialNo + 1 : 1;
 
 
-let input = document.getElementById("todo-input").addEventListener("keypress",(e)=>{
-  if(e.key=="Enter"){
+let input = document.getElementById("todo-input").addEventListener("keypress", (e) => {
+  if (e.key == "Enter") {
     addFunction();
   }
 })
@@ -12,19 +12,19 @@ let input = document.getElementById("todo-input").addEventListener("keypress",(e
 
 
 // getting the input value and calling the add function
-function addFunction(){
+function addFunction() {
   let input = document.getElementById("todo-input")
-  if(input.value.trim() == ""){
+  if (input.value.trim() == "") {
     alert("please enter a value")
     return;
   }
-  addTodo(count,input.value)
+  addTodo(count, input.value)
   let value = {
-    serialNo:count,
-    taskValue:input.value
+    serialNo: count,
+    taskValue: input.value
   }
   tasks.push(value);
-  localStorage.setItem("tasks",JSON.stringify(tasks))
+  localStorage.setItem("tasks", JSON.stringify(tasks))
   input.value = ""
   count++;
 }
@@ -86,9 +86,9 @@ function addTodo(sno, value) {
   delete_button.classList.add("btn-danger")
   childDiv_3.appendChild(delete_button)
 
-  delete_button.addEventListener('click',deleteTodo)
+  delete_button.addEventListener('click', deleteTodo)
 
-  edit_button.addEventListener('click',editTodo)
+  edit_button.addEventListener('click', editTodo)
 
   // delete_button.onclick = deleteTodo;
 
@@ -97,15 +97,15 @@ function addTodo(sno, value) {
 
 // to load/print the todos when the page loads/refresh
 function printValues() {
-  if(tasks.length){
+  if (tasks.length) {
     let stringTask = localStorage.getItem("tasks")
 
     let parsedTask = JSON.parse(stringTask)
-  
+
     // let main = document.getElementById("main-container")
-   
+
     parsedTask.forEach(element => {
-      addTodo(element.serialNo,element.taskValue)
+      addTodo(element.serialNo, element.taskValue)
     });
   }
 }
@@ -129,34 +129,34 @@ function searchTodo(e) {
   main.innerHTML = ""
 
   filteredTodos.map((element) => {
-    addTodo(element.serialNo,element.taskValue)
+    addTodo(element.serialNo, element.taskValue)
   });
 
 }
 
 
-function editTodo(e){
+function editTodo(e) {
 
   // get the new value
- let newValue =  prompt("enter new todo")
+  let newValue = prompt("enter new todo")
 
- if(newValue==""){
-  alert("please enter a value")
-  return;
- }
- if(newValue==null){
-  return;
- }
- //target the previous value
- let secondChild = e.target.parentElement.parentElement.getElementsByTagName('div')[1].firstElementChild
+  if (newValue == "") {
+    alert("please enter a value")
+    return;
+  }
+  if (newValue == null) {
+    return;
+  }
+  //target the previous value
+  let secondChild = e.target.parentElement.parentElement.getElementsByTagName('div')[1].firstElementChild
 
- //update the previous value with new value
- secondChild.innerText = newValue
+  //update the previous value with new value
+  secondChild.innerText = newValue
 
- let firstChild = e.target.parentElement.parentElement.getElementsByTagName('div')[0].firstElementChild
+  let firstChild = e.target.parentElement.parentElement.getElementsByTagName('div')[0].firstElementChild
 
-  let filterdArray = tasks.map((value,key)=>{
-    if(value.serialNo==firstChild.innerText){
+  let filterdArray = tasks.map((value, key) => {
+    if (value.serialNo == firstChild.innerText) {
       value.taskValue = newValue;
     }
     return value;
@@ -164,7 +164,7 @@ function editTodo(e){
 
   tasks = filterdArray;
 
-  localStorage.setItem("tasks",JSON.stringify(filterdArray));
+  localStorage.setItem("tasks", JSON.stringify(filterdArray));
 
 
 }
@@ -173,21 +173,21 @@ function editTodo(e){
 
 
 // for deleteing the todo
-function deleteTodo(e){
+function deleteTodo(e) {
   let removeRow = e.target.parentElement.parentElement;
   let getSno = removeRow.firstElementChild;
   let h6 = getSno.firstElementChild.innerText;
-  
-  let filteredTodos = tasks.filter((value,key)=>{
-    if(value.serialNo != h6){
+
+  let filteredTodos = tasks.filter((value, key) => {
+    if (value.serialNo != h6) {
       return value;
     }
   })
 
-  let finalTodos = filteredTodos.map((task,key)=>{
+  let finalTodos = filteredTodos.map((task, key) => {
     let value = {
-      serialNo : key+1,
-      taskValue : task.taskValue
+      serialNo: key + 1,
+      taskValue: task.taskValue
     }
     return value
   })
@@ -197,7 +197,7 @@ function deleteTodo(e){
   tasks = finalTodos;
   count--
 
-  localStorage.setItem("tasks",JSON.stringify(finalTodos))  // localstorage 
+  localStorage.setItem("tasks", JSON.stringify(finalTodos))  // localstorage 
   removeRow.remove() // dom 
 
   let mainContainer = document.getElementById("main-container")
