@@ -15,7 +15,7 @@ function addTodo(sno = 1, value, id) {
 
   //created col with h6 child
   let childDiv_1 = document.createElement("div")
-  childDiv_1.classList.add('col-lg-2', "col-md-2", "col-sm-12", "mt-3")
+  childDiv_1.classList.add('col-lg-2', "col-md-2", "col-sm-12", "mt-3","text-center")
   parentDiv.appendChild(childDiv_1)
 
   let childH6_1 = document.createElement("h6");
@@ -26,7 +26,7 @@ function addTodo(sno = 1, value, id) {
 
   //created col-8 with h6 child
   let childDiv_2 = document.createElement("div")
-  childDiv_2.classList.add("col-lg-7", "col-md-7", "col-sm-12", "mt-3")
+  childDiv_2.classList.add("col-lg-7", "col-md-7", "col-sm-12", "mt-3","text-center")
   parentDiv.appendChild(childDiv_2)
 
   let childH6_2 = document.createElement("h6");
@@ -40,7 +40,7 @@ function addTodo(sno = 1, value, id) {
   childDiv_3.classList.add('col-lg-3', "col-md-3", "col-sm-12", "mt-3")
   childDiv_3.classList.add("d-flex")
   childDiv_3.classList.add("align-items-center")
-  childDiv_3.classList.add("gap-1")
+  childDiv_3.classList.add("gap-1","buton-gap")
   parentDiv.appendChild(childDiv_3)
 
   //created edit button
