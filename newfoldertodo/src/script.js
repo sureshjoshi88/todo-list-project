@@ -219,10 +219,10 @@ function update(id, title) {
         main.innerHTML = ""
         getTodos()
       } else {
-        console.log(result)
+        console.log(result,"please try again")
       }
     })
-    .catch((error) => console.error(error));
+    .catch((error) => console.log(error));
 }
 
 function deleteTodo(id) {
