@@ -92,6 +92,7 @@ function getTodos(title = "") {
         container.innerHTML = ""
         todos.map((value, key) => {
           addTodo(key + 1, value.title, value._id)
+         
         })
       }
     })
